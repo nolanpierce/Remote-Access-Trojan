@@ -1,23 +1,13 @@
 import os
-import shutil
-from pathlib import Path
-import glob
+import socket
 
-downloads_dir = Path.home() / 'Downloads'
-desktop_dir = Path.home() / 'Desktop'
-downloads = str(downloads_dir)
-desktop = str(desktop_dir)
+from system.filemanager import FileManager
+from system.displaymanager import DisplayManager
+from system.processmanager import ProcessManager
 
-downloads_files = glob.glob(f'{downloads}/*')
-desktop_files = glob.glob(f'{desktop}/*')
 
-# Sort our epubs so we can move them elsewhere before deleting
-epubs = [file for file in downloads_files if file.endswith('.epub')]
-
-# Make our books directory if it doesn't exist
-books_dir = desktop_dir / 'books'
-os.makedirs(books_dir, exist_ok=True)
-
-# Move each epub file to the books directory
-for epub in epubs:
-    shutil.move(epub, books_dir)
+# we are going to have to find a way to connect to our discord bot and execute commands from there
+#im thinking of using some form of tcp
+if __name__ == '__main__':
+    # our main code
+    print('welcome to our main')
