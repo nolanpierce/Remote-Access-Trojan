@@ -9,6 +9,7 @@ class ProcessManager:
     def __init__(self) -> None:
         pass
 
+    #untested may need updating
     def clone(self, process_name: str) -> bool:
         '''
         Clones a process loaded in memory.
@@ -20,10 +21,10 @@ class ProcessManager:
         - True if successful, False otherwise.
         '''
         try:
-            # Find the process by name
+            # find the process by name ;p (untested)
             for proc in psutil.process_iter(['pid', 'name', 'exe']):
                 if proc.info['name'] == process_name:
-                    # Start a new instance of the process executable (if available)
+                    # Start the process executable
                     if proc.info['exe']:
                         new_process = subprocess.Popen(proc.info['exe'])
                         return new_process is not None
@@ -35,6 +36,7 @@ class ProcessManager:
             print(f"An error occurred: {e}")
             return False
 
+    #untested may need updating
     def create(self, process_name: str, runs_forever=False, code_to_run=None) -> bool:
         '''
         Creates a new process that is empty and can either execute code via shellcode
@@ -70,6 +72,7 @@ class ProcessManager:
             print(f"An error occurred: {e}")
             return False
 
+    
     def terminate(self, process_name: str) -> bool:
         '''
         Terminates a process by name.
